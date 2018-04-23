@@ -8,7 +8,7 @@
 //   expect(bubbleSort().swap.calls.count()).toEqual(7);
 // });
 
-describe('Bubble Sort', function(){
+xdescribe('Bubble Sort', function(){
   beforeAll(function () {
     spyOn(window, 'swap').and.callThrough(false);
   });
@@ -21,5 +21,3 @@ describe('Bubble Sort', function(){
     expect( bubbleSort([1,4,5,3,7,6,2]) ).toEqual( [1,2,3,4,5,6,7] );
   });
 });
-
-

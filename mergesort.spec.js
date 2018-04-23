@@ -6,10 +6,10 @@ describe('Split Array function', function() {
 
 describe('Merge function', function(){
   it('is able to merge two sorted arrays into one sorted array', function(){
-    expect( merge([[4],[9]]) ).toEqual( [4,9] );
+    expect( merge([4],[9]) ).toEqual( [4,9] );
   });
 
   it('is able to merge two sorted arrays into one sorted array', function(){
-    expect( merge([[4,5,6],[9,10,11]]) ).toEqual( [4,5,6,9,10,11] );
+    expect( merge([4,5,6],[9,10,11]) ).toEqual( [4,5,6,9,10,11] );
   });
 });

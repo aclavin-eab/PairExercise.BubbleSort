@@ -15,31 +15,14 @@ function merge(firstHalf, secondHalf){
   // } else {
   //   arrLength = secondHalf.length;
   // }
-
   while (firstHalf[0] || secondHalf[0]){
-
-    console.log(firstHalf[0], secondHalf[0])
-
-    if (firstHalf[0] && secondHalf[0]){
-      if (firstHalf[0] > secondHalf[0]){
-        sortedArr.push(firstHalf[0]);
-        firstHalf.pop();
-      } else {
+      if ((!firstHalf[0] || firstHalf[0] > secondHalf[0]) && secondHalf[0]){
         sortedArr.push(secondHalf[0]);
-        secondHalf.pop();
-      }
-    } else {
-      if (firstHalf[0]){
-        sortedArr.push(firstHalf[0]);
-        firstHalf.pop();
+        secondHalf.shift();
       } else {
-        sortedArr.push(secondHalf[0]);
-        secondHalf.pop();
+        sortedArr.push(firstHalf[0]);
+        firstHalf.shift();
       }
-    }
   }
-
-
-
   return sortedArr;
 }
