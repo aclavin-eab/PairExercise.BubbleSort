@@ -1,4 +1,4 @@
-const swap = () => {
+function swap(arr) {
   // let sortedState = false;
   if (arr.length){
     for (let i = 0; i < arr.length; i+=2){
@@ -15,7 +15,7 @@ const swap = () => {
 }
 
 //arr is sorted === arr.sort()
-const bubbleSort = (arr) => {
+function bubbleSort(arr) {
   let sortedState = false;
   //base case
    if(sortedState === true){

@@ -1,7 +1,7 @@
-beforeAll(function () {
-  // spyOn(window, 'bubbleSort').and.callThrough();
-  // spyBubbleSort = createSpy('bubbleSpy', bubbleSort).and.callThrough()
-});
+// beforeAll(function () {
+//   spyOn(window, 'bubbleSort').and.callThrough();
+//   // spyBubbleSort = createSpy('bubbleSpy', bubbleSort).and.callThrough()
+// });
 
 // it('how many times it swaps', function () {
 //   bubbleSort(swap);
@@ -9,6 +9,10 @@ beforeAll(function () {
 // });
 
 describe('Bubble Sort', function(){
+  beforeAll(function () {
+    spyOn(window, 'swap').and.callThrough(false);
+  });
+
   it('handles an empty array', function(){
     expect( bubbleSort([]) ).toEqual( [] );
   });
