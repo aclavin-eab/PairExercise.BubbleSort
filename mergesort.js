@@ -9,12 +9,7 @@ function split(wholeArray) {
 
 function merge(firstHalf, secondHalf){
   let sortedArr = [];
-  let arrLength;
-  // if (firstHalf.length >= secondHalf.length){
-  //   arrLength = firstHalf.length;
-  // } else {
-  //   arrLength = secondHalf.length;
-  // }
+
   while (firstHalf[0] || secondHalf[0]){
       if ((!firstHalf[0] || firstHalf[0] > secondHalf[0]) && secondHalf[0]){
         sortedArr.push(secondHalf[0]);
@@ -24,5 +19,21 @@ function merge(firstHalf, secondHalf){
         firstHalf.shift();
       }
   }
+  return sortedArr;
+}
+
+function mergeSort(array){
+  let sortedArr = [];
+
+  if (array.length === 1){
+    return array;
+  }
+
+  if (array.length === 2){
+    return merge(array[0], array[1]);
+  } else {
+    return merge(split(array));
+  }
+
   return sortedArr;
 }
