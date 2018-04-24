@@ -1,23 +1,17 @@
-// beforeAll(function () {
-//   spyOn(window, 'bubbleSort').and.callThrough();
-//   // spyBubbleSort = createSpy('bubbleSpy', bubbleSort).and.callThrough()
-// });
+describe('Bubble Sort', function(){
+    beforeAll(function(){
+        spyOn(window, 'swap').and.callThrough();
+    })
+    it('handles an empty array', function(){
+        expect( bubbleSort([] )).toEqual( [] );
+    });
 
-// it('how many times it swaps', function () {
-//   bubbleSort(swap);
-//   expect(bubbleSort().swap.calls.count()).toEqual(7);
-// });
+    it('handles a single element array', function(){
+        expect( bubbleSort([9])).toEqual([9]);
+    });
 
-xdescribe('Bubble Sort', function(){
-  beforeAll(function () {
-    spyOn(window, 'swap').and.callThrough(false);
-  });
-
-  it('handles an empty array', function(){
-    expect( bubbleSort([]) ).toEqual( [] );
-  });
-
-  it('handles non-empty array', function(){
-    expect( bubbleSort([1,4,5,3,7,6,2]) ).toEqual( [1,2,3,4,5,6,7] );
-  });
+    it('sorts an array of numbers', function(){
+        expect( bubbleSort([10, 100, 3, 17, 59, 49])).toEqual([3, 10, 17, 49, 59, 100]);
+        expect(window.swap.calls.count()).toEqual(6);
+    })
 });
